@@ -5,26 +5,30 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.splabs.leet</groupId>
-  <artifactId>leed</artifactId>
+  <artifactId>leet</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>leed</name>
+  <name>leet</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
+   <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>5.9.2</version>
+        <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>5.9.2</version>
+      <scope>test</scope>
+      </dependency>
   </dependencies>
 
   <build>
@@ -68,6 +72,14 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
+        </plugin>
+        <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M7</version>
+        </plugin>
+        <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <version>3.0.0-M7</version>
         </plugin>
       </plugins>
     </pluginManagement>
