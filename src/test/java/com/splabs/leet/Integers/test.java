@@ -41,4 +41,19 @@ public class test
         assertEquals(2,2);
     }
 
+    @ParameterizedTest
+    @MethodSource("numberOfSquaresTestProvider")
+    void numberOfSquaresTest(int[] a, int answer)
+    {        System.out.println("--------------------");
+
+        int count = solution.numberOfSquares(a);
+        assertEquals(answer, count);
+    }
+
+    static Stream<Arguments> numberOfSquaresTestProvider() {
+        return Stream.of(
+            Arguments.of(new int[] { -1, 18, 3, 1, 5}, 4),
+            Arguments.of(new int[] { -2, -1, 0, 1, 2}, 6)
+        );
+    }
 }
