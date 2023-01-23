@@ -2,7 +2,6 @@ package com.splabs.leet.Arrays;
 
 public class Sequence {
     boolean solution(int[] sequence) {
-        boolean[] seq = new boolean[sequence.length-1];
         int tbd=0;
         int nonSeq = 0;
         for(int i = 0 ; i < sequence.length - 1; i++) {

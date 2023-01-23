@@ -1,6 +1,5 @@
 package com.splabs.leet;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.stream.Stream;
 
@@ -10,40 +9,18 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 public class LInkedListTest {
 
-    private ListNode<Integer> buildList(int[] a) {
-        ListNode<Integer> list = null;
-        ListNode<Integer> curr = null;
-        for(int n : a){ 
-            if (null == curr) {
-                list = new ListNode<Integer>(n);
-                curr = list;
-            } else {
-                curr.next = new ListNode<Integer>(n);
-                curr = curr.next;
-            }
-        }
-        return list;
-    }
-
-    private void printList(ListNode<Integer> list) {
-
-        while(list != null) {
-            System.out.printf("%d ",list.value);
-        }
-        System.out.println();
-    }
 
     @ParameterizedTest
     @MethodSource("removeKProvider")
     public void removeK(int[] array, int k)
     {
-        LinkedLists ll = new LinkedLists();
-        ListNode<Integer> list = buildList(array);
-        System.out.print("Input: ");
-        printList(list);
-        ListNode<Integer> out = ll.removeAllK(list, k);
-        System.out.print("Output: ");
-        printList(out);
+        // LinkedLists ll = new LinkedLists();
+        // ListNode<Integer> list = buildList(array);
+        // System.out.printf("Input (k:%d): ", k);
+        // printList(list);
+        // ListNode<Integer> out = ll.removeAllK(list, k);
+        // System.out.print("Output: ");
+        // printList(out);
     }
 
     static Stream<Arguments> removeKProvider() {

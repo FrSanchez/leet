@@ -1,7 +1,7 @@
 package com.splabs.leet.Strings;
 
 public class Time {
-    public static String timeConversion(String s) {
+    public String timeConversion(String s) {
         String [] parts = s.split(":");
         String ampm = parts[2].substring(2);
         int hour = Integer.parseInt(parts[0]);
