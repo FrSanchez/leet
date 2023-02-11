@@ -32,5 +32,9 @@ Your task is to calculate the maximum integer length L for which it is possible 
 
         return res;
     }
-    
+
+    public int compareStrings(String s, String t) {
+        return 0;
+    }
+
 }

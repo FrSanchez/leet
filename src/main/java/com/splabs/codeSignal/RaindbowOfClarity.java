@@ -31,7 +31,7 @@ public class RaindbowOfClarity {
             n /= 10;
         }
         for (int i = 0; i < nums.size(); i++) {
-            int n = toNum(nums, i);
+            n = toNum(nums, i);
             if (max < n) {
                 max = n;
             }

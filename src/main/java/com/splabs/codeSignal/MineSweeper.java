@@ -1,5 +1,10 @@
 package com.splabs.codeSignal;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Stack;
+
 public class MineSweeper {
     int[][] solution(boolean[][] field, int x, int y) {
         int[][] board = new int[field.length][field[0].length];
