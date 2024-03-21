@@ -29,14 +29,37 @@ public class TopologicalSortTest {
         System.out.println(java.util.Arrays.toString(ordering));
 
         // Finds all the shortest paths starting at node 0
-        Integer[] dists = TopologicalSort.dagShortestPath(graph, 0, N);
-        System.out.println(java.util.Arrays.toString(dists));
+        int start = 0;
+        Integer[] dists = TopologicalSort.dagShortestPath(graph, start, N);
+        for(int i = 0; i < N; i++) {
+            System.out.printf("%d->%d: %d  ", start,i, dists[i]);
+        }
+    }
 
-        // Find the shortest path from 0 to 4 which is 8.0
-        System.out.println(dists[4]);
+    @Test
+    public void sortGraph2() {
+        final int N = 6;
+        Map<Integer, List<TopologicalSort.Edge>> graph = new HashMap<>();
+        for (int i = 0; i < N; i++) graph.put(i, new ArrayList<>());
+        graph.get(5).add(new TopologicalSort.Edge(5, 2, 1));
+        graph.get(5).add(new TopologicalSort.Edge(5, 0, 1));
+        graph.get(4).add(new TopologicalSort.Edge(4, 1, 1));
+        graph.get(4).add(new TopologicalSort.Edge(4, 0, 1));
+        graph.get(2).add(new TopologicalSort.Edge(2, 3, 1));
+        graph.get(3).add(new TopologicalSort.Edge(3, 1, 1));
 
-        // Find the shortest path from 0 to 6 which
-        // is null since 6 is not reachable!
-        System.out.println(dists[6]);
+        int[] ordering = TopologicalSort.topologicalSort(graph, N);
+
+        // // Prints: [6, 0, 5, 1, 2, 3, 4]
+        System.out.println(java.util.Arrays.toString(ordering));
+
+        // Finds all the shortest paths starting at node 0
+        int start = 5;
+        Integer[] dists = TopologicalSort.dagShortestPath(graph, start, N);
+//        System.out.println(java.util.Arrays.toString(dists));
+        for(int i = 0; i < N; i++) {
+            System.out.printf("%d->%d: %d  ", start,i, dists[i]);
+        }
+
     }
 }

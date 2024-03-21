@@ -13,8 +13,7 @@ public class Time {
                 hour+=12;
             }
         }
-        String time = String.format("%02d:%s:%s", hour,parts[1],parts[2].substring(0,2));
-        return time;
+        return String.format("%02d:%s:%s", hour,parts[1],parts[2].substring(0,2));
     }
 
 }

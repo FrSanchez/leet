@@ -64,7 +64,7 @@ public class Islands {
                     if (x==0 && y ==0) {
                         continue;
                     }
-                    if (x >= 0 && x >=0 && x < width && y < height) {
+                    if (x >= 0 && y >=0 && x < width && y < height) {
                         if (map[y][x] == 1) {
                             stack.add(new Point(x, y));
                         }
