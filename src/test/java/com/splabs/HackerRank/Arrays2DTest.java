@@ -32,6 +32,7 @@ public class Arrays2DTest {
                 Arrays.asList(0, 0, -1, -2, -4, 0));
         int sum = Arrays2D.hourglassSum(arr);
         assertEquals(0, sum);
+        StringBuilder sb = new StringBuilder();
     }
 
     @Test
