@@ -19,10 +19,10 @@ public class TestSum {
         sum.solution(toList(a), toList(b));
     }
 
-    private ListNode<Integer> toList(int[] a) {
-        ListNode<Integer> curr = null;
+    private ListNode toList(int[] a) {
+        ListNode curr = null;
         for(int i = a.length - 1; i >= 0; i--) {
-            ListNode<Integer> next = new ListNode<Integer>(a[i]);
+            ListNode next = new ListNode(a[i]);
             next.next = curr;
             curr = next;
         };

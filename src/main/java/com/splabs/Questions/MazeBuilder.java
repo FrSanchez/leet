@@ -40,7 +40,7 @@ public class MazeBuilder {
                     valid.add(dir);
                 }
             }
-            if(valid.size() > 0) {
+            if(!valid.isEmpty()) {
                 int[] dir = valid.get(rnd.nextInt(valid.size()));
                 int nx = x + dir[0];
                 int ny = y + dir[1];

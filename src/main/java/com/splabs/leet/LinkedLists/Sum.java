@@ -12,18 +12,18 @@ public class Sum {
     //   ListNode<T> next;
     // }
     //
-    ListNode<Integer> solution(ListNode<Integer> a, ListNode<Integer> b) {
+    ListNode solution(ListNode a, ListNode b) {
         System.out.println(a);
         System.out.println(b);
-        ListNode<Integer> lh = reverse(a);
-        ListNode<Integer> rh = reverse(b);
+        ListNode lh = reverse(a);
+        ListNode rh = reverse(b);
         System.out.println(lh);
         System.out.println(rh);
-        ListNode<Integer> sol = null;
+        ListNode sol = null;
         int carry = 0;
         while(lh != null && rh != null) {
             int sum = lh.value + rh.value + carry;
-            ListNode<Integer> curr = new ListNode<Integer>(sum % 10000);
+            ListNode curr = new ListNode(sum % 10000);
             carry = sum / 10000;
             curr.next = sol;
             sol = curr;
@@ -33,7 +33,7 @@ public class Sum {
         }
         while(lh != null) {
             int sum = lh.value + carry;
-            ListNode<Integer> curr = new ListNode<Integer>(sum % 10000);
+            ListNode curr = new ListNode(sum % 10000);
             carry = sum / 10000;
             curr.next = sol;
             sol = curr;
@@ -41,25 +41,25 @@ public class Sum {
         }
         while(rh != null) {
             int sum = rh.value + carry;
-            ListNode<Integer> curr = new ListNode<Integer>(sum % 10000);
+            ListNode curr = new ListNode(sum % 10000);
             carry = sum / 10000;
             curr.next = sol;
             sol = curr;
             rh = rh.next;
         }
         if (carry > 0) {
-            ListNode<Integer> curr = new ListNode<Integer>(carry);
+            ListNode curr = new ListNode(carry);
             curr.next = sol;
             sol = curr;
         }
         return sol;
     }
 
-    ListNode<Integer> reverse(ListNode<Integer> list)
+    ListNode reverse(ListNode list)
     {
-        ListNode<Integer> head = null;
+        ListNode head = null;
         while(list != null) {
-            ListNode<Integer> temp = list;
+            ListNode temp = list;
             list = list.next;
             temp.next = head;
             head = temp;

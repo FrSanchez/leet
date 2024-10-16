@@ -28,6 +28,6 @@ Explanation: ".*" means "zero or more (*) of any character (.)".
      */
     public boolean isMatch(String s, String p) {
         int pp = 0, ps = 0;
-
+        return false;
     }
 }

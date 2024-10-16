@@ -12,20 +12,20 @@ public class reverseByK {
     //   ListNode<T> next;
     // }
     //
-    ListNode<Integer> solution(ListNode<Integer> l, int k) {
+    ListNode solution(ListNode l, int k) {
         if (k==1) {
             return l;
         }
-        ListNode<Integer> head = null;
-        ListNode<Integer> answer = null;
-        ListNode<Integer> tk = null;
+        ListNode head = null;
+        ListNode answer = null;
+        ListNode tk = null;
         int count = 0;
         while(l != null) {
             count++;
             // System.out.printf("%d cnt %d\n", l.value, count);
             if (count <= k) {
                 // create new list in reverse
-                ListNode<Integer> temp = l;
+                ListNode temp = l;
                 l = l.next;
                 temp.next = tk;
                 tk = temp;
@@ -59,11 +59,11 @@ public class reverseByK {
         return answer;
     }
 
-    ListNode<Integer> reverse(ListNode<Integer> list)
+    ListNode reverse(ListNode list)
     {
-        ListNode<Integer> sol = null;
+        ListNode sol = null;
         while(list != null) {
-            ListNode<Integer> temp = list;
+            ListNode temp = list;
             list = list.next;
             temp.next = sol;
             sol = temp;
