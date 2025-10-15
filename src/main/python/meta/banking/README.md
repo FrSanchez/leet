@@ -5,7 +5,8 @@ You're building the foundation of a simple banking system. The system must suppo
 ```python
 class BankingSystem(ABC):
     def create_account(self, timestamp: int, account_id: str) -> bool:
-    def deposit(self, timestamp: int, account_id: str, amount: int)     def pay(self, timestamp: int, account_id: str, amount: int) -> Optional[int]:
+    def deposit(self, timestamp: int, account_id: str, amount: int) 
+    def pay(self, timestamp: int, account_id: str, amount: int) -> Optional[int]:
 ```
 ---
 # Stage 1 - The basics
