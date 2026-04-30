@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class Islands {
-    private static class Point {
+    private static class Point  {
         public int x;
         public int y;
         public Point(int x, int y) {
