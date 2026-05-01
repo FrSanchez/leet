@@ -1,0 +1,31 @@
+package com.splabs.Questions;
+
+import java.util.*;
+
+public class UserRolesSolution extends UserRoles {
+    private String findRoleName(List<Feature> grants) {
+        Set<Feature> set = new HashSet<>(grants);
+        var array = set.toArray(new Feature[0]);
+        return array.toString();
+    }
+    @Override
+    public List<Role> GenerateRoles(List<User> users) {
+        var map = new HashMap<String, List<User>>();
+        for(User user : users) {
+            String roleName = findRoleName(user.grant());
+            if(!map.containsKey(roleName)) {
+                map.put(roleName, new ArrayList<>());
+            }
+            map.get(roleName).add(user);
+        }
+        List<Role> roles = new ArrayList<>();
+        for(var roleName : map.keySet()) {
+            var usersInRole = map.get(roleName);
+            List<Account> accounts = new ArrayList<>();
+            usersInRole.forEach(user -> { accounts.add(new Account(user)); });
+            Role role = new Role(roleName, users.get(0).grant(),accounts);
+            roles.add(role);
+        }
+        return roles;
+    }
+}
