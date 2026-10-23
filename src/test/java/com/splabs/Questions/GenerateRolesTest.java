@@ -7,9 +7,10 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class GenerateRolesTest {
-    private static final int BASELINE_USER_COUNT = 100;
+    private static final int BASELINE_USER_COUNT = 200;
     private static final long BASELINE_RANDOM_SEED = 20260430L;
 
     private static final String[] FIRST_NAMES = {
@@ -33,6 +34,23 @@ public class GenerateRolesTest {
     public void GenerateRoles() {
         List<UserRoles.User> users = GenerateBaselineUsers();
         List<UserRoles.Role> roles = userRoles.GenerateRoles(users);
+        for(UserRoles.Role role : roles) {
+            System.out.printf("Role: %s -------------------------", role.name());
+            StringBuilder sb = new StringBuilder();
+            boolean first = true;
+            for(var feature : role.features()) {
+                if (first) {
+                    first = false;
+                } else {
+                    sb.append(", ");
+                }
+                sb.append(feature);
+            }
+            System.out.printf("Features: %s, Users: %d\n", sb, role.users().size());
+            for(UserRoles.Account account : role.users()) {
+                System.out.printf("  - %s (%s)\n", account.name(), account.email());
+            }
+        }
     }
 
     private List<UserRoles.User> GenerateBaselineUsers() {
